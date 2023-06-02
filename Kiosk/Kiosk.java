@@ -22,20 +22,20 @@ public class Kiosk {
       itemMenu = new ArrayList<>();
       order = new Order();
 
-      initializeMainMenu();
-      initializeItemMenu();
+      initMainMenu();
+      initItemMenu();
       displayMainMenu();
 
-    }
+  }
 
-    private static void initializeMainMenu(){
+    private static void initMainMenu(){
       mainMenu.add(new Menu("1.Coffee","최고급 원두를 사용한 커피"));
       mainMenu.add(new Menu(("2.Tea"+"\t"),"고품질 찻잎을 이용해서 만들어요"));
       mainMenu.add(new Menu("3.Dessert","음료랑 같이 먹기 좋은 디저트"));
     }
 
 
-    private static void initializeItemMenu(){
+    private static void initItemMenu(){
       itemMenu.add(new Item("아메리카노",3200,"에스프레소에 물 탔어요","Coffee"));
       itemMenu.add(new Item("에스프레소",2900,"에스프레소에 물 안탔어요","Coffee"));
       itemMenu.add(new Item("카페라떼",3700,"에스프레소에 우유 탔어요","Coffee"));
@@ -51,9 +51,12 @@ public class Kiosk {
     }
 
     public static void displayMainMenu(){
-        System.out.println("|"+"\t"+"EdiyaCoffee"+"\t"+"\t"+"|");
+        System.out.println("|"+"\t"+"EdiyaCoffee에 오신 것을 환영합니다"+"\t"+"\t"+"|");
+        System.out.println();
+        System.out.println("   "+"========"+"      "+"MENU"+"      "+"========");
         for (Menu menu: mainMenu){
             System.out.println(menu.getName()+"\t"+"|"+"\t"+menu.getDescription());}
+        System.out.println("   "+"========"+"      "+"ORDER"+"     "+"========");
         System.out.println("4.Order"+"\t"+"\t"+"|"+"\t"+"장바구니를 확인 후 주문합니다.");
         System.out.println("5.Cancel"+"\t"+"|"+"\t"+"진행중인 주문을 취소합니다");
         System.out.println("선택하고 싶으신 메뉴의 번호를 입력하세요");
