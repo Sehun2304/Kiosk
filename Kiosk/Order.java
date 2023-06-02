@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Order {
+    private static int count = 0;
     private List<Item> cart;
 
     public Order() {
@@ -39,8 +40,15 @@ public class Order {
     }
     public void orderCart(){
         System.out.println("주문 완료");
-        System.out.println("대기번호는"+1+"번"+"입니다.");
+        count++;
+        System.out.println("대기번호는"+count +"번"+"입니다.");
         cart.clear();
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.getMessage();
+        }
+
         Kiosk.displayMainMenu();
 
     }
